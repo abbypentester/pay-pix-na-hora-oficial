@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receba PIX na Hora - Gateway de Pagamento Seguro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">PayNaHora</div>
+            <nav>
+                <a href="#features">Como Funciona</a>
+                <a href="#pricing">Taxas</a>
+                <a href="#generator" class="cta-button">Gerar Cobrança</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Receba pagamentos PIX sem burocracia e sem expor seus dados.</h1>
+                <p>Cansado de compartilhar sua chave PIX pessoal? Gere cobranças seguras e profissionais em segundos. Ideal para freelancers, vendedores e prestadores de serviço.</p>
+                <a href="#generator" class="cta-button">Comece a Usar Agora</a>
+            </div>
+        </section>
+
+        <section id="generator" class="generator-section">
+            <div class="container">
+                <div class="generator-box">
+                    <h2>Gerar Cobrança PIX</h2>
+                    <p>Preencha o valor e clique em gerar. É simples assim.</p>
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="valor">Valor da Cobrança</label>
+                            <input type="number" id="valor" placeholder="R$ 0,00">
+                        </div>
+                        <div class="form-group">
+                            <label for="userId">ID da Sua Carteira Temporária</label>
+                            <input type="text" id="userId" readonly>
+                            <small>Este ID é único para sua sessão. Guarde-o para consultar seu saldo e solicitar saques.</small>
+                        </div>
+                        <button id="generateBtn">Gerar QR Code</button>
+                        <p id="fee-info" class="fee-info"></p>
+                    </div>
+                </div>
+                <div id="payment-info" class="payment-info-box hidden">
+                    <h3>Cobrança Gerada com Sucesso!</h3>
+                    <p>Aponte a câmera para o QR Code ou utilize o código abaixo.</p>
+                    <img id="qrCodeImg" src="" alt="QR Code PIX">
+                    <textarea id="pixCopiaECola" readonly></textarea>
+                    <button id="copyBtn">Copiar Código</button>
+                    <div class="status-check">
+                        <p>Aguardando confirmação do pagamento...</p>
+                        <button id="verifyBtn">Verificar Status</button>
+                        <p id="payment-status"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2>Privacidade e Agilidade para suas Vendas</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>Proteja sua Privacidade</h3>
+                        <p>Não exponha seu CPF ou número de celular. Gere cobranças anônimas e mantenha seus dados seguros.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Recebimento Instantâneo</h3>
+                        <p>O valor cai na sua conta intermediária assim que o pagamento é confirmado. Sem espera, sem complicação.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Sem Cadastro, Sem App</h3>
+                        <p>Use diretamente pelo navegador. Não precisa baixar nada nem preencher formulários de cadastro intermináveis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="balance" class="generator-section">
+            <div class="container">
+                <div class="generator-box">
+                    <h2>Consultar Saldo / Solicitar Saque</h2>
+                    <p>Insira o ID da sua carteira para ver seu saldo disponível e solicitar o saque.</p>
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="balanceUserId">ID da Carteira</label>
+                            <input type="text" id="balanceUserId" placeholder="Cole o ID da sua carteira aqui">
+                        </div>
+                        <button id="checkBalanceBtn">Consultar Saldo</button>
+                        <div id="balance-info" class="fee-info"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <h2>Taxas Transparentes</h2>
+                <ul>
+                    <li><strong>Taxa Fixa:</strong> R$5,00 por transação.</li>
+                    <li><strong>Taxa de Entrada (In):</strong> 10% sobre o valor depositado.</li>
+                    <li><strong>Taxa de Saída (Out):</strong> 8% sobre o valor retirado.</li>
+                </ul>
+                <p>A calculadora abaixo reflete apenas as taxas de entrada.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PayNaHora. Todos os direitos reservados.</p>
+            <p class="cors-warning"><strong>Atenção:</strong> Esta é uma demonstração. A funcionalidade de gerar pagamento pode não funcionar se o arquivo for aberto localmente no seu computador devido a restrições de segurança do navegador (CORS). Para o funcionamento completo, a página precisa estar hospedada em um servidor web.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
