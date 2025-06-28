@@ -16,7 +16,10 @@ export default async function handler(request, response) {
     const newBalance = await kv.hincrby(`user:${userId}`, 'balance', amount);
     return response.status(200).json({ success: true, newBalance });
   } catch (error) {
-    console.error('Error updating balance:', error);
-    return response.status(500).json({ error: 'Failed to update balance' });
+    console.error('Error updating balance in Vercel KV:', error);
+    return response.status(500).json({ 
+      error: 'Failed to update balance.',
+      details: error.message 
+    });
   }
 }

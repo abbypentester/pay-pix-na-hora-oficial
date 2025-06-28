@@ -17,7 +17,12 @@ export default async function handler(request, response) {
     const finalBalance = balance || 0;
     return response.status(200).json({ balance: finalBalance });
   } catch (error) {
-    console.error('Error fetching balance:', error);
-    return response.status(500).json({ error: 'Failed to fetch balance' });
+    console.error('Error fetching balance from Vercel KV:', error);
+    // Return the actual error message in the response for debugging purposes
+    // In a real production environment, you might want to return a more generic error
+    return response.status(500).json({ 
+      error: 'Failed to fetch balance.',
+      details: error.message, // Sending back the error message
+    });
   }
 }
